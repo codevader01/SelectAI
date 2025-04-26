@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "SelectAI",
+    "version": "1.0",
+    "description": "Select text and explain with AI via ChatGPT.",
+    "permissions": ["contextMenus", "activeTab", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "assests/logo128.png",
+        "48": "assests/logo128.png",
+        "128": "assests/logo128.png"
+      }
+    },
+    "icons": {
+      "16": "assests/logo16.png",
+      "48": "assests/logo48.png",
+      "128": "assests/logo128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://chat.openai.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ]
+  }
+  
